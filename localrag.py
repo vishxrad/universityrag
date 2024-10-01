@@ -18,7 +18,7 @@ def open_file(filepath):
         return infile.read()
 
 # Function to get relevant context from the vault based on user input
-def get_relevant_context(rewritten_input, vault_embeddings, vault_content, top_k=3):
+def get_relevant_context(rewritten_input, vault_embeddings, vault_content, top_k=1):
     if vault_embeddings.nelement() == 0:  # Check if the tensor has any elements
         return []
     # Encode the rewritten input
