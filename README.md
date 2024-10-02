@@ -1,6 +1,6 @@
-# University Chatbot with RAG and Ollama
+# University Chatbot with RAG, Ollama, and Intel Extension for PyTorch
 
-This project implements a chatbot for university information using Retrieval-Augmented Generation (RAG) and Ollama with the Mistral model. The chatbot is designed to answer queries about a university using its prospectus.
+This project implements a chatbot for university information using Retrieval-Augmented Generation (RAG) and Ollama with the Mistral model. The chatbot is designed to answer queries about a university using its prospectus and is optimized to run on Intel CPUs using Intel Extension for PyTorch (IPEX).
 
 ## Features
 
@@ -8,12 +8,14 @@ This project implements a chatbot for university information using Retrieval-Aug
 - Integrates Ollama with the Mistral model for natural language processing
 - Embeds and retrieves relevant information from a university prospectus
 - Supports query rewriting for improved context understanding
+- Optimized with Intel Extension for PyTorch (IPEX) for enhanced performance on Intel hardware
 - Provides colorized console output for better readability
 
 ## Prerequisites
 
 - Python 3.7+
 - Ollama installed and running locally
+- Intel CPUs for optimized performance with Intel Extension for PyTorch
 
 ## Installation
 
@@ -27,6 +29,10 @@ This project implements a chatbot for university information using Retrieval-Aug
    ```
    pip install -r requirements.txt
    ```
+3. Install Intel Extension for PyTorch to optimize performance on Intel CPUs:
+   ```
+   pip install intel-extension-for-pytorch
+   ```
 
 ## Usage
 
@@ -36,8 +42,28 @@ This project implements a chatbot for university information using Retrieval-Aug
    ```
    python main.py --model mistral
    ```
-
 3. Start asking questions about the university. Type 'quit' to exit the program.
+
+# Enabling Intel Optimizations
+To take advantage of Intel optimizations, you can modify the chatbot code to use Intel Extension for PyTorch (IPEX). Below is an example of how to apply Intel's optimizations when running the chatbot:
+```python
+import intel_extension_for_pytorch as ipex
+import torch
+
+# Example: Define a simple model (replace with your actual model)
+model = torch.nn.Linear(10, 5)
+
+# Optimize the model with Intel Extension for PyTorch
+model = ipex.optimize(model)
+```
+Once optimized, proceed with your usual inference or training. The IPEX optimizations will boost performance on Intel hardware.
+```python
+# Example input tensor
+input_tensor = torch.randn(64, 10)
+
+# Run inference with the optimized model
+output = model(input_tensor)
+```
 
 ## How it works
 
@@ -47,6 +73,7 @@ This project implements a chatbot for university information using Retrieval-Aug
    - Rewrites the query for better context understanding
    - Retrieves relevant context from the prospectus using cosine similarity
    - Generates a response using the Mistral model via Ollama
+   - Optimizes the model using Intel Extension for PyTorch to speed up inference
    - Maintains a conversation history for context-aware responses
 
 ## Dependencies
@@ -59,6 +86,7 @@ This project implements a chatbot for university information using Retrieval-Aug
 - beautifulsoup4
 - lxml
 - python-dotenv
+- intel-extension-for-pytorch
 
 ## Contributing
 
