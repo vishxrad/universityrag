@@ -40,7 +40,7 @@ This project implements a chatbot for university information using Retrieval-Aug
 
 2. Run the chatbot:
    ```
-   python main.py --model mistral
+   python ollamaragbutintel.py
    ```
 3. Start asking questions about the university. Type 'quit' to exit the program.
 
