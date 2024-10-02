@@ -63,3 +63,7 @@ This project implements a chatbot for university information using Retrieval-Aug
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Sample
+![image](https://github.com/user-attachments/assets/8adb6fba-2c97-4bb4-8a15-3a6c481919dd)
+
