@@ -21,7 +21,7 @@ This project implements a chatbot for university information using Retrieval-Aug
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/university-chatbot.git
+   git clone https://github.com/vishxrad/universityrag.git
    cd university-chatbot
    ```
 
